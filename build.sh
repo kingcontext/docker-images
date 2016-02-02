@@ -4,8 +4,7 @@
 
 for SCALA_VERSION in ${SCALA_VERSIONS}; do
     echo "Building confluent-platform-${SCALA_VERSION}"
-    cp confluent-platform/Dockerfile confluent-platform/Dockerfile.${SCALA_VERSION}
-    sed -i "s/ENV SCALA_VERSION=.*/ENV SCALA_VERSION=\"${SCALA_VERSION}\"/" confluent-platform/Dockerfile.${SCALA_VERSION}
+    sed -e "s/ENV SCALA_VERSION=.*/ENV SCALA_VERSION=\"${SCALA_VERSION}\"/" confluent-platform/Dockerfile > confluent-platform/Dockerfile.${SCALA_VERSION}
     TAGS="confluent/platform-${SCALA_VERSION}"
     if [ "x$SCALA_VERSION" = "x$DEFAULT_SCALA_VERSION" ]; then
 	TAGS="$TAGS confluent/platform"
