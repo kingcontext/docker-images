@@ -14,12 +14,9 @@ ENV KAFKA_LOG_DIRS "/var/lib/kafka"
 
 COPY kafka-docker.sh /usr/local/bin/
 
-RUN groupadd -r ${CONFLUENT_GROUP} &&\
-    useradd -r -g ${CONFLUENT_GROUP} ${CONFLUENT_USER} &&\
-    mkdir -p ${KAFKA_LOG_DIRS} ${KAFKA_LOGS} &&\
-    chown -R ${CONFLUENT_USER}:${CONFLUENT_GROUP} ${KAFKA_LOG_DIRS} ${KAFKA_LOGS} /etc/kafka/server.properties /usr/local/bin/kafka-docker.sh &&\
+RUN mkdir -p ${KAFKA_LOG_DIRS} &&\
+    chown -R ${CONFLUENT_USER}:${CONFLUENT_GROUP} ${KAFKA_LOG_DIRS} /etc/kafka/server.properties /usr/local/bin/kafka-docker.sh &&\
     chmod +x /usr/local/bin/kafka-docker.sh
-
 
 USER ${CONFLUENT_USER}
 VOLUME ["${KAFKA_LOG_DIRS}", "${KAFKA_LOGS}"]

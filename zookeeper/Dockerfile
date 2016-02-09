@@ -19,8 +19,6 @@ RUN rm /etc/kafka/log4j.properties &&\
     echo 'log4j.appender.stdout=org.apache.log4j.ConsoleAppender' >> /etc/kafka/log4j.properties &&\
     echo 'log4j.appender.stdout.layout=org.apache.log4j.PatternLayout' >> /etc/kafka/log4j.properties &&\
     echo 'log4j.appender.stdout.layout.ConversionPattern=[%d] %p %m (%c)%n' >> /etc/kafka/log4j.properties &&\
-    groupadd -r ${CONFLUENT_GROUP} &&\
-    useradd -r -g ${CONFLUENT_GROUP} ${CONFLUENT_USER} &&\
     mkdir ${ZK_DATA_DIR} &&\
     chown -R ${CONFLUENT_GROUP}:${CONFLUENT_USER} ${ZK_DATA_DIR} /usr/local/bin/zk-docker.sh /etc/kafka/zookeeper.properties &&\
     chmod +x /usr/local/bin/zk-docker.sh
