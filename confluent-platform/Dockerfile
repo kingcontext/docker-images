@@ -18,7 +18,7 @@ RUN apk --no-cache add curl bash openjdk${JAVA_VERSION}-jre-base && \
 	cp -aR /tmp/confluent-${CONFLUENT_MAJOR_VERSION}.${CONFLUENT_MINOR_VERSION}/bin/* /usr/bin/ && \
 	cp -aR /tmp/confluent-${CONFLUENT_MAJOR_VERSION}.${CONFLUENT_MINOR_VERSION}/etc/* /etc/ && \
 	cp -aR /tmp/confluent-${CONFLUENT_MAJOR_VERSION}.${CONFLUENT_MINOR_VERSION}/share/* /usr/share/ && \
-	rm -Rf /tmp/* && \
+	rm -Rf /tmp/* /usr/share/doc/* /usr/share/java/camus /usr/share/java/kafka-connect-* && \
 	addgroup -S ${CONFLUENT_GROUP} && \
     adduser -G ${CONFLUENT_GROUP} -S ${CONFLUENT_USER} && \
     mkdir -p ${KAFKA_LOGS} && \ 
