@@ -2,12 +2,12 @@
 **Images for Confluent-2.0 with Java-8.**
 
 No need to build, just use the available images at https://hub.docker.com/u/kingcontext:
-- kingcontext/confluent-platform:confluent2
-- kingcontext/confluent-zookeeper:confluent2
-- kingcontext/confluent-kafka:confluent2
-- kingcontext/confluent-schema-registry:confluent2
-- kingcontext/confluent-rest-proxy:confluent2
-- kingcontext/confluent-tools:confluent2
+- kingcontext/confluent-platform:confluent2-alpine
+- kingcontext/confluent-zookeeper:confluent2-alpine
+- kingcontext/confluent-kafka:confluent2-alpine
+- kingcontext/confluent-schema-registry:confluent2-alpine
+- kingcontext/confluent-rest-proxy:confluent2-alpine
+- kingcontext/confluent-tools:confluent2-alpine
 
 ---
 
