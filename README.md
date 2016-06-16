@@ -15,3 +15,5 @@ No need to build, just use the available images at https://hub.docker.com/u/king
 - kingcontext/confluent-tools:confluent3-alpine-min
 
 See [upstream repo](https://github.com/confluentinc/docker-images) for usage instructions.
+
+For the alpine-based images of Confluent2, check the repository tags.
