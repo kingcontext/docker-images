@@ -2,7 +2,8 @@
 # start up any particular service, just installs the platform. Other images
 # inherit from this image to start up a particular service.
 
-FROM java:8-jre-alpine
+#FROM java:8-jre-alpine
+FROM anapsix/alpine-java
 
 ENV CONFLUENT_USER confluent
 ENV CONFLUENT_GROUP confluent
