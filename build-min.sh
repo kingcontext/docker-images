@@ -73,6 +73,11 @@ for SCALA_VERSION in ${SCALA_VERSIONS}; do
 
     ls -1 "${TAR_ROOT}/bin" | grep -v windows > "${TOOLS_COMMAND_LIST}"
 
+    rm -Rf $TAR_ROOT/share/doc
+    rm -Rf $TAR_ROOT/share/java/confluent-control-center
+    rm -Rf $TAR_ROOT/share/java/kafka-connect-jdbc 
+    rm -Rf $TAR_ROOT/share/java/kafka-connect-hdfs
+
     # Setup default configurations for kafka broker
     SERVER_PROPERTIES=`find "${TAR_ROOT}" -type f -name 'server.properties'`
     cp ./kafka/server.properties "${SERVER_PROPERTIES}"
